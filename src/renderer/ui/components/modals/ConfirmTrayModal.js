@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Dialog from './ThemedDialog';
 import FlatButton from 'material-ui/FlatButton';
 
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+
 export default class ConfirmTrayModal extends Component {
   constructor(...args) {
     super(...args);

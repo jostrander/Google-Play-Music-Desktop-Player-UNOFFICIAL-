@@ -13,6 +13,7 @@ import SettingsClass from './main/utils/Settings';
 import WindowManagerClass from './main/utils/WindowManager';
 import PlaybackAPIClass from './main/utils/PlaybackAPI';
 import I3IpcHelperClass from './main/utils/I3IpcHelper';
+import TranslationsProvider from './_locales/_provider';
 
 import handleStartupEvent from './squirrel';
 
@@ -80,6 +81,7 @@ app.setAppUserModelId('com.marshallofsound.gpmdp.core');
   global.Emitter = new EmitterClass();
   global.WindowManager = new WindowManagerClass();
   global.PlaybackAPI = new PlaybackAPIClass();
+  global.TranslationProvider = new TranslationsProvider();
 
   // UA for GA
   // This is for user reporting

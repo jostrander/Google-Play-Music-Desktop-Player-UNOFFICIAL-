@@ -5,6 +5,9 @@ import FlatButton from 'material-ui/FlatButton';
 import fs from 'fs';
 import path from 'path';
 
+const Settings = remote.getGlobal('Settings');
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+
 const appVersion = remote.app.getVersion();
 const changeLog = fs.readFileSync(path.resolve(`${__dirname}/../../../../../MR_CHANGELOG.html`), 'utf8');
 

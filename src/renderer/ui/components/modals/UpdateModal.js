@@ -1,6 +1,10 @@
+import { remote } from 'electron';
 import React, { Component } from 'react';
 import Dialog from './ThemedDialog';
 import FlatButton from 'material-ui/FlatButton';
+
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+const Emitter = remote.getGlobal('Emitter');
 
 export default class UpdateModal extends Component {
   constructor(...args) {

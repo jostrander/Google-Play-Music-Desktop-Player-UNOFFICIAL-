@@ -5,6 +5,8 @@ import Dialog from './ThemedDialog';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+// const Emitter = remote.getGlobal('Emitter');
 export default class GoToModal extends Component {
   constructor(...args) {
     super(...args);

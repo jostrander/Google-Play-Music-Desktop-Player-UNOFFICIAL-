@@ -46,14 +46,14 @@ Emitter.on('BrowserWindow:swipe', (e, ...args) => handleSwipeCommand(...args));
 Emitter.on('BrowserWindow:scroll-touch-begin', (e, ...args) => startScroll(...args));
 Emitter.on('BrowserWindow:scroll-touch-end', (e, ...args) => endScroll(...args));
 
-if (process.platform === 'linux') {
-  const mouse = require('mouse-forward-back');
+// if (process.platform === 'linux') {
+//   const mouse = require('mouse-forward-back');
 
-  mouse.register((button) => {
-    if (button === 'back') {
-      remote.getCurrentWebContents().goBack();
-    } else if (button === 'forward') {
-      remote.getCurrentWebContents().goForward();
-    }
-  }, remote.getCurrentWindow().getNativeWindowHandle());
-}
+//   mouse.register((button) => {
+//     if (button === 'back') {
+//       remote.getCurrentWebContents().goBack();
+//     } else if (button === 'forward') {
+//       remote.getCurrentWebContents().goForward();
+//     }
+//   }, remote.getCurrentWindow().getNativeWindowHandle());
+// }

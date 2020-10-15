@@ -18,6 +18,9 @@ import UpdateModal from '../components/modals/UpdateModal';
 import UninstallV2Modal from '../components/modals/UninstallV2Modal';
 import WelcomeNewVersionModal from '../components/modals/WelcomeNewVersionModal';
 
+const Settings = remote.getGlobal('Settings');
+const Emitter = remote.getGlobal('Emitter');
+
 export default class PlayerPage extends Component {
   constructor(...args) {
     super(...args);

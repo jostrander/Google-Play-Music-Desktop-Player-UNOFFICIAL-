@@ -21,7 +21,9 @@ export default () => {
     icon: path.resolve(`${__dirname}/../assets/img/main.${(process.platform === 'win32' ? 'ico' : 'png')}`), // eslint-disable-line
     title: 'Google Play Music Desktop Player',
     webPreferences: {
+      webviewTag: true,
       nodeIntegration: true,
+      enableRemoteModule: true,
       preload: path.resolve(`${__dirname}/../renderer/generic/index.js`),
     },
   };

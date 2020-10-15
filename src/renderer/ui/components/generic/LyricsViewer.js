@@ -4,6 +4,8 @@ import { findDOMNode } from 'react-dom';
 import { shell, remote } from 'electron';
 import { requireSettings } from './SettingsProvider';
 
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+
 class LyricsViewer extends Component {
   static propTypes = {
     theme: PropTypes.bool.isRequired,

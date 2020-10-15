@@ -23,4 +23,10 @@ export default (app) => {
   if (process.platform === 'darwin' && global.DEV_MODE) {
     app.dock.setIcon(path.resolve(__dirname, '..', 'assets/img/main.png'));
   }
+
+  // De-duplicate MPRIS and keybindings
+  if (process.platform === 'linux') {
+    app.commandLine.appendSwitch('disable-features', 'MediaSessionService');
+    app.commandLine.appendSwitch('disable-features', 'HardwareMediaKeyHandling');
+  }
 };

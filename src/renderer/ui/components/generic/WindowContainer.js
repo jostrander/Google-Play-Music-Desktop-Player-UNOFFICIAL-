@@ -6,6 +6,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import PlatformSpecific from './PlatformSpecific';
 import generateTheme from '../../utils/theme';
 
+const Settings = remote.getGlobal('Settings');
+
 export default class WindowContainer extends Component {
   static propTypes = {
     children: PropTypes.oneOfType([

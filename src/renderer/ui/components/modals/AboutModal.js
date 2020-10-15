@@ -6,6 +6,8 @@ import FlatButton from 'material-ui/FlatButton';
 const appVersion = remote.app.getVersion();
 const appName = remote.app.getName();
 const appInDevMode = remote.getGlobal('DEV_MODE') ? 'Running in Development Mode' : '';
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+// const Emitter = remote.getGlobal('Emitter');
 
 export default class AboutModal extends Component {
   constructor(...args) {

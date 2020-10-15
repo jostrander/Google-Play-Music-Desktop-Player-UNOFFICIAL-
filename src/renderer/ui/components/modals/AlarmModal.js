@@ -1,3 +1,4 @@
+import { remote } from 'electron';
 import React, { Component, PropTypes } from 'react';
 import Dialog from './ThemedDialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -5,6 +6,8 @@ import TimePicker from 'material-ui/TimePicker';
 import { green500, green700 } from 'material-ui/styles/colors';
 
 import { requireSettings } from '../generic/SettingsProvider';
+const TranslationProvider = remote.getGlobal('TranslationProvider');
+// const Emitter = remote.getGlobal('Emitter');
 
 class AlarmModal extends Component {
   static propTypes = {

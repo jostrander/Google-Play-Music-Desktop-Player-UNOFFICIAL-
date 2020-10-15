@@ -1,5 +1,8 @@
+import { remote } from 'electron';
 import React, { Component, PropTypes } from 'react';
 
+const Settings = remote.getGlobal('Settings');
+const Emitter = remote.getGlobal('Emitter');
 export default class SettingsProvider extends Component {
   static propTypes = {
     component: PropTypes.func.isRequired,

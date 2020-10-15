@@ -18,10 +18,32 @@ if (global.HTMLSpanElement) {
       return this._key;
     };
 
-    window.ThumbImage = document.registerElement(`translation-key${elementTag === 'span' ? '' : `-${elementTag}`}`, {
-      prototype: TranslationProto,
-      extends: elementTag,
-    });
+    class TranslationElement extends originalElement {
+      constructor() {
+        super();
+        this.initialized = false;
+      }
+      connectedCallback() {
+        if (!this.initialized) {
+          this._key = this.textContent;
+          this.innerHTML = TranslationProvider.query(this.textContent);
+        }
+        this.initialized = true;
+      }
+      setKey(newKey) {
+        this._key = newKey;
+        this.innerHTML = TranslationProvider.query(newKey);
+      }
+      getKey() {
+        return this._key;
+      }
+    }
+
+    customElements.define(`translation-key${elementTag === 'span' ? '' : `-${elementTag}`}`, TranslationElement, { extends: elementTag });
+    // window.ThumbImage = document.registerElement(, {
+    //   prototype: TranslationProto,
+    //   extends: elementTag,
+    // });
   };
 
   createTranslationElement(HTMLSpanElement, 'span');

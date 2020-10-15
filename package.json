@@ -31,14 +31,14 @@
     "pretest-electron-coverage": "cross-env NODE_ENV=coverage npm run build",
     "pretest-spectron": "npm run build",
     "test-electron": "npm run test-electron-main && npm run test-electron-renderer",
-    "test-electron-main": "electron-mocha ./test/electron/*_spec.js ./test/electron/**/*_spec.js -R spec-xunit-file --compilers js:babel-core/register",
-    "test-electron-renderer": "electron-mocha ./test/electron-renderer/**/**/*_spec.js ./test/electron-renderer/**/*_spec.js ./test/electron-renderer/*_spec.js --renderer -R spec-xunit-file --compilers js:babel-core/register",
+    "test-electron-main": "electron-mocha ./test/electron/*_spec.js ./test/electron/**/*_spec.js -R spec-xunit-file --compilers js:@babel/register",
+    "test-electron-renderer": "electron-mocha ./test/electron-renderer/**/**/*_spec.js ./test/electron-renderer/**/*_spec.js ./test/electron-renderer/*_spec.js --renderer -R spec-xunit-file --compilers js:@babel/register",
     "test-electron-coverage": "npm run test-electron-main-coverage && npm run test-electron-renderer-coverage",
     "test-electron-main-coverage": "cross-env NODE_ENV=coverage npm run test-electron-main -- -R test/istanbul-reporter",
     "test-electron-renderer-coverage": "cross-env NODE_ENV=coverage npm run test-electron-renderer -- -R test/istanbul-reporter",
     "posttest-electron-main-coverage": "npm run _remap",
     "posttest-electron-renderer-coverage": "npm run _remap",
-    "test-spectron": "mocha ./test/spectron --compilers js:babel-core/register -R spec-xunit-file --timeout 10000",
+    "test-spectron": "mocha ./test/spectron --compilers js:@babel/register -R spec-xunit-file --timeout 10000",
     "prestart": "pre-flight && node vendor/patch_dev.js && electron-rebuild --types=prod,optional",
     "start": "electron . --dev",
     "watch": "gulp watch",
@@ -59,6 +59,7 @@
   "license": "MIT",
   "dependencies": {
     "@slack/client": "^4.8.0",
+    "abstract-socket": "2.1.1",
     "archiver": "^1.0.1",
     "auto-launch": "^4.0.0",
     "discord-rich-presence": "^0.0.7",
@@ -75,6 +76,7 @@
     "material-ui": "^0.15.4",
     "mdns": "^2.3.3",
     "mkdirp": "^0.5.1",
+    "node-abi": "^2.19.1",
     "node-fetch": "^1.5.2",
     "raven": "^0.12.1",
     "react": "^15.3.1",
@@ -82,7 +84,6 @@
     "react-dom": "^15.3.1",
     "react-tap-event-plugin": "2.0.1",
     "request": "^2.72.0",
-    "runas": "^3.1.1",
     "semver": "^5.3.0",
     "universal-analytics": "^0.4.2",
     "username": "^2.2.2",
@@ -93,23 +94,24 @@
     "ytmusic.js": "^6.2.2"
   },
   "devDependencies": {
-    "babel-eslint": "^6.1.2",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^9.0.0",
     "babel-plugin-istanbul": "^2.0.1",
-    "babel-plugin-transform-class-properties": "^6.11.5",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-register": "^6.8.0",
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
     "chai-fs": "chaijs/chai-fs",
     "coveralls": "^2.11.12",
     "cross-env": "^2.0.1",
     "devtron": "^1.0.1",
-    "electron": "4.2.12",
+    "electron": "10",
     "electron-devtools-installer": "^2.2.4",
     "electron-mocha": "^3.0.0",
     "electron-packager": "^13.1.1",
-    "electron-rebuild": "^1.8.4",
+    "electron-rebuild": "^2.2.0",
     "electron-windows-store": "^0.9.3",
     "enzyme": "^2.4.1",
     "eslint": "^2.10.2",
@@ -121,7 +123,7 @@
     "glob": "^7.0.6",
     "gpmdp-electron-winstaller": "1.0.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
+    "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-cssmin": "^0.1.7",
@@ -170,11 +172,11 @@
   },
   "babel": {
     "presets": [
-      "es2015",
-      "react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ],
     "plugins": [
-      "transform-class-properties"
+      "@babel/plugin-proposal-class-properties"
     ],
     "env": {
       "coverage": {
@@ -191,6 +193,6 @@
     }
   },
   "resolutions": {
-    "nan": "^2.13.1"
+    "nan": "^2.12.1"
   }
 }

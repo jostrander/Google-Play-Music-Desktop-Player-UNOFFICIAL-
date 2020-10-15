@@ -19,6 +19,7 @@ export const showDesktopSettings = () => {
     titleBarStyle: Settings.get('nativeFrame') && process.platform === 'darwin' ? 'hidden' : 'default',
     show: false,
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: true,
     },
     icon: path.resolve(`${__dirname}/../../../assets/img/main.${(process.platform === 'win32' ? 'ico' : 'png')}`), // eslint-disable-line
@@ -47,6 +48,7 @@ export const showColorWheel = () => {
     titleBarStyle: Settings.get('nativeFrame') && process.platform === 'darwin' ? 'hidden' : 'default',
     show: false,
     webPreferences: {
+      enableRemoteModule: true,
       nodeIntegration: true,
     },
     icon: path.resolve(`${__dirname}/../../../assets/img/main.${(process.platform === 'win32' ? 'ico' : 'png')}`), // eslint-disable-line

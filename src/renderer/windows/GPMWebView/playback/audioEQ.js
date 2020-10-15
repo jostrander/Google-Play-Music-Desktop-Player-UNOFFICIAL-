@@ -11,26 +11,26 @@ window.wait(() => {
 
       // DEV: We do this here so that we can set the output device before hooking the context
       navigator.mediaDevices.enumerateDevices()
-        .then((devices) =>
-          new Promise((resolve) => {
-            let set = false;
-            _.forEach(devices, (device) => {
-              if (device.label === Settings.get('audiooutput')) {
-                set = true;
-                Array.prototype.forEach.call(document.querySelectorAll(audioSelector), (audioElem) => {
-                  let once = true;
-                  audioElem.addEventListener('playing', () => {
-                    if (!once) return;
-                    once = false;
-                    setAudioDevice(audioElem, device.deviceId)
-                      .then(resolve);
-                  });
-                });
-              }
-            });
-            if (!set) resolve();
-          })
-        )
+        // .then((devices) =>
+        //   new Promise((resolve) => {
+        //     let set = false;
+        //     _.forEach(devices, (device) => {
+        //       if (device.label === Settings.get('audiooutput')) {
+        //         set = true;
+        //         Array.prototype.forEach.call(document.querySelectorAll(audioSelector), (audioElem) => {
+        //           let once = true;
+        //           audioElem.addEventListener('playing', () => {
+        //             if (!once) return;
+        //             once = false;
+        //             setAudioDevice(audioElem, device.deviceId)
+        //               .then(resolve);
+        //           });
+        //         });
+        //       }
+        //     });
+        //     if (!set) resolve();
+        //   })
+        // )
         .then(() => {
           // TODO: Uncomment this so that the equalizer works
           // DEV: This doesn't work with audio selection so let's disable it

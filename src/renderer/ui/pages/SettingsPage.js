@@ -1,3 +1,4 @@
+import { remote } from 'electron';
 import React, { Component } from 'react';
 import { Tabs, Tab } from 'material-ui/Tabs';
 
@@ -10,6 +11,9 @@ import PlaybackTab from '../components/settings/tabs/PlaybackTab';
 import StyleTab from '../components/settings/tabs/StyleTab';
 import SlackTab from '../components/settings/tabs/SlackTab';
 import WindowContainer from '../components/generic/WindowContainer';
+
+global.TranslationProvider = remote.getGlobal('TranslationProvider');
+global.Settings = remote.getGlobal('Settings');
 
 const styles = {
   tab: {
