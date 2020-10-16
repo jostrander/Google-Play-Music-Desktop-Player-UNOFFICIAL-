@@ -7,7 +7,7 @@ import path from 'path';
 const environment = process.env;
 
 export default function (fileName) {
-  const targetFileName = process.windowsStore ? `${fileName}-uwp` : fileName;
+  const targetFileName = fileName;
   const DIR = path.resolve(`${(app ? app.getPath('userData') : remote.require('electron').app.getPath('userData'))}/json_store`); // eslint-disable-line
 
   const PATH = `${DIR}/${targetFileName}.json`;
