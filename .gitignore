@@ -19,3 +19,5 @@ stage/
 snap/
 *.snap
 
+
+out/
