@@ -77,6 +77,7 @@
   "playback-label-toggle-repeat": "Toggle Repeat",
 
   "settings-requires-restart": "Requires restart",
+  "settings-gpm-only": "Google Play Music Only",
 
   "settings-option-keep-sidebar-open": "Keep sidebar open",
   "settings-option-static-album-art": "Keep album art static in visualizer",
