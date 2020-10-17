@@ -47,7 +47,6 @@
   "license": "MIT",
   "dependencies": {
     "@slack/client": "^4.8.0",
-    "abstract-socket": "2.1.1",
     "archiver": "^1.0.1",
     "auto-launch": "^4.0.0",
     "discord-rich-presence": "^0.0.7",
@@ -116,7 +115,6 @@
     "eslint-plugin-react": "^5.2.2",
     "fs-extra": "^0.30.0",
     "glob": "^7.0.6",
-    "gpmdp-electron-winstaller": "1.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
