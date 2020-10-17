@@ -41,4 +41,5 @@ crashReporter.start({
   companyName: 'gpmdp',
   submitURL: 'https://gpmdp.sp.backtrace.io:6098/post?format=minidump&token=029c3dfba8cc89d09a7a8a5dd42d32eb27371fefe80525edcc8ff0efebff40cd',
   uploadToServer: true,
+  compress: true,
 });
