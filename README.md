@@ -30,7 +30,7 @@ OS Support
 
 * Windows 7 or later
 * Mac OS X 10.9.0 or later
-* Ubuntu 14.04 or later
+* Ubuntu 16.04 or later
 * Mint
 * Fedora
 * Debian
@@ -85,24 +85,14 @@ Development
 To get started just pull the repo and run the following
 
 ```bash
-npm install
-npm run build
-npm start
+yarn
+yarn run build
+yarn start
 ```
 
 To build the installers / release packages you need to run, you can only build a platforms installer from that platform.
 ```bash
-# Windows
-npm run make:win
-
-# Mac OS X
-npm run make:darwin
-
-# Ubuntu (Requires the 'dpkg' package)
-npm run make:deb
-
-# Fedora (Requires the 'rpm' package)
-npm run make:rpm
+yarn make
 ```
 
 All releases will be signing with my Code Signing Certificates (Authenticode on Windows and Codesign on OS X)
@@ -123,8 +113,10 @@ If you think you can add something cool or fix a problem, fork the repo and make
 
 Dev Requirements
 ----------------
-* Node.js (Recommend `6.3.x`)
-* NPM (3.x.x)
+* Node.js (Recommend `10+`)
+* Yarn (yarnpkg.com)
+
+Platform specific requirements are also needed.
 
 Continuous Integration
 ------------------------
