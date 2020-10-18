@@ -1797,11 +1797,6 @@ abstract-socket@^2.0.0:
     bindings "^1.2.1"
     nan "^2.12.1"
 
-accessibility-developer-tools@^2.11.0:
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/accessibility-developer-tools/-/accessibility-developer-tools-2.12.0.tgz#3da0cce9d6ec6373964b84f35db7cfc3df7ab514"
-  integrity sha1-PaDM6dbsY3OWS4TzXbfPw996tRQ=
-
 accord@^0.29.0:
   version "0.29.0"
   resolved "https://registry.yarnpkg.com/accord/-/accord-0.29.0.tgz#b741c176d00435c5929d466dfe8cf6bee933b1e4"
@@ -3881,15 +3876,6 @@ dev-null@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/dev-null/-/dev-null-0.1.1.tgz#5a205ce3c2b2ef77b6238d6ba179eb74c6a0e818"
   integrity sha1-WiBc48Ky73e2I41roXnrdMag6Bg=
-
-devtron@^1.0.1:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/devtron/-/devtron-1.4.0.tgz#b5e748bd6e95bbe70bfcc68aae6fe696119441e1"
-  integrity sha1-tedIvW6Vu+cL/MaKrm/mlhGUQeE=
-  dependencies:
-    accessibility-developer-tools "^2.11.0"
-    highlight.js "^9.3.0"
-    humanize-plus "^1.8.1"
 
 diff@3.2.0:
   version "3.2.0"
@@ -6273,11 +6259,6 @@ hexy@^0.2.10:
   resolved "https://registry.yarnpkg.com/hexy/-/hexy-0.2.11.tgz#9939c25cb6f86a91302f22b8a8a72573518e25b4"
   integrity sha512-ciq6hFsSG/Bpt2DmrZJtv+56zpPdnq+NQ4ijEFrveKN0ZG1mhl/LdT1NQZ9se6ty1fACcI4d4vYqC9v8EYpH2A==
 
-highlight.js@^9.3.0:
-  version "9.18.3"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.3.tgz#a1a0a2028d5e3149e2380f8a865ee8516703d634"
-  integrity sha512-zBZAmhSupHIl5sITeMqIJnYCDfAEc3Gdkqj65wC1lpI468MMQeeQkhcIAvk+RylAkxrCcI9xy9piHiXeQ1BdzQ==
-
 hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
@@ -6352,11 +6333,6 @@ http2-wrapper@^1.0.0-beta.5.2:
   dependencies:
     quick-lru "^5.1.1"
     resolve-alpn "^1.0.0"
-
-humanize-plus@^1.8.1:
-  version "1.8.2"
-  resolved "https://registry.yarnpkg.com/humanize-plus/-/humanize-plus-1.8.2.tgz#a65b34459ad6367adbb3707a82a3c9f916167030"
-  integrity sha1-pls0RZrWNnrbs3B6gqPJ+RYWcDA=
 
 hyphenate-style-name@^1.0.1:
   version "1.0.4"
